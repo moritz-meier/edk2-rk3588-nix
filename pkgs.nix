@@ -46,11 +46,12 @@ final: prev: {
     rev = "rk3588";
     hash = "sha256-t+dtZHyIpPGd/ED/GiQTr9GMTUeBefH8cDt6KuHTmpw=";
   };
-  edk2-rk3588-src = final.fetchgit {
-    url = "https://github.com/edk2-porting/edk2-rk3588.git";
-    hash = "sha256-3awEMdFMGYsH18/wjQDkpMoZgWc4sfnm4ttgUof4fl4=";
-    fetchSubmodules = true;
-  };
+  # edk2-rk3588-src = final.fetchgit {
+  #   url = "https://github.com/edk2-porting/edk2-rk3588.git";
+  #   hash = "sha256-3awEMdFMGYsH18/wjQDkpMoZgWc4sfnm4ttgUof4fl4=";
+  #   fetchSubmodules = true;
+  # };
+  edk2-rk3588-src = ./src/edk2-rk3588;
   rkbin-src = final.fetchFromGitLab {
     domain = "gitlab.collabora.com";
     owner = "hardware-enablement/rockchip-3588";

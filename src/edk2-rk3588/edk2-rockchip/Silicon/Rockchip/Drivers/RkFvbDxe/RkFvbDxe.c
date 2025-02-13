@@ -1654,16 +1654,20 @@ RkFvbEntryPoint (
   )
 {
   EFI_STATUS      Status = 0;
-  RKATAG_BOOTDEV  *BootDevice;
 
-  BootDevice = RkAtagsGetBootDev ();
-  if (BootDevice != NULL) {
-    mBootDeviceType = BootDevice->DevType;
-    DEBUG ((DEBUG_INFO, "%a: BootDevice->DevType = 0x%x\n", __FUNCTION__, mBootDeviceType));
-  } else {
-    DEBUG ((DEBUG_ERROR, "%a: Couldn't identify boot device.\n", __FUNCTION__));
-    mBootDeviceType = RkAtagBootDevTypeUnknown;
-  }
+  // patch: upstream spl does not set bootdev atag; assume spi flash
+  // RKATAG_BOOTDEV  *BootDevice;
+
+  // BootDevice = RkAtagsGetBootDev ();
+  // if (BootDevice != NULL) {
+  //   mBootDeviceType = BootDevice->DevType;
+  //   DEBUG ((DEBUG_INFO, "%a: BootDevice->DevType = 0x%x\n", __FUNCTION__, mBootDeviceType));
+  // } else {
+  //   DEBUG ((DEBUG_ERROR, "%a: Couldn't identify boot device.\n", __FUNCTION__));
+  //   mBootDeviceType = RkAtagBootDevTypeUnknown;
+  // }
+
+  mBootDeviceType = RkAtagBootDevTypeSpiNor;
 
   //
   // Create FVB flash device
