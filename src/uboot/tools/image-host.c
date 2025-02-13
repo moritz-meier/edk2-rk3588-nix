@@ -576,7 +576,9 @@ int fit_image_cipher_data(const char *keydir, void *keydest,
 	/* Get image data and data length */
 	if (fit_image_get_data(fit, image_noffset, &data, &size)) {
 		fprintf(stderr, "Can't get image data/size\n");
-		return -1;
+		// patch: dont fail for external data nodes
+		// return -1;
+		return 0;
 	}
 
 	/*
@@ -656,7 +658,9 @@ int fit_image_add_verification_data(const char *keydir, const char *keyfile,
 	/* Get image data and data length */
 	if (fit_image_get_data(fit, image_noffset, &data, &size)) {
 		fprintf(stderr, "Can't get image data/size\n");
-		return -1;
+		// patch: dont fail for external data nodes
+		// return -1;
+		return 0;
 	}
 
 	image_name = fit_get_name(fit, image_noffset, NULL);

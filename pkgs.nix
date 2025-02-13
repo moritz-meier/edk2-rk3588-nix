@@ -38,7 +38,7 @@ final: prev: {
   #   rev = "rk3588";
   #   hash = "sha256-pO3Lcjlgt0wRe2r0HVRIB/KlyQiwYh4mIZ6Zc5Paut0=";
   # };
-  uboot-src = ./srcs/uboot;
+  uboot-src = ./src/uboot;
   linux-src = final.fetchFromGitLab {
     domain = "gitlab.collabora.com";
     owner = "hardware-enablement/rockchip-3588";

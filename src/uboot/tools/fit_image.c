@@ -647,7 +647,9 @@ static int fit_import_data(struct image_tool_params *params, const char *fname)
 	data_base = ALIGN(fit_size, 4);
 
 	/* Allocate space to hold the new FIT */
-	size = sbuf.st_size + 16384;
+	// patch: increase buffer size
+	// size = sbuf.st_size + 16384;
+	size = sbuf.st_size + 1000000;
 	fdt = calloc(1, size);
 	if (!fdt) {
 		fprintf(stderr, "%s: Failed to allocate memory (%d bytes)\n",
@@ -695,8 +697,9 @@ static int fit_import_data(struct image_tool_params *params, const char *fname)
 			continue;
 		debug("Importing data size %x\n", len);
 
-		ret = fdt_setprop(fdt, node, FIT_DATA_PROP, data, len);
-		ret = fdt_delprop(fdt, node, ext_data_prop);
+		// patch: dont add data node for external data; dont delete external data position
+		// ret = fdt_setprop(fdt, node, FIT_DATA_PROP, data, len);
+		// ret = fdt_delprop(fdt, node, ext_data_prop);
 
 		if (ret) {
 			debug("%s: Failed to write property: %s\n", __func__,
