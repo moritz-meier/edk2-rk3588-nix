@@ -1,0 +1,68 @@
+default:
+  image: debian:bookworm-slim
+
+stages:
+  - build
+
+build rock-5b:
+  stage: build
+  variables:
+    DEBIAN_FRONTEND: noninteractive
+    GIT_STRATEGY: fetch
+    GIT_DEPTH: "1"
+    RKBIN_REPO_URL: https://gitlab-ci-token:${CI_JOB_TOKEN}@${CI_SERVER_HOST}/hardware-enablement/rockchip-3588/rkbin.git
+    TFA_REPO_URL: https://gitlab-ci-token:${CI_JOB_TOKEN}@${CI_SERVER_HOST}/hardware-enablement/rockchip-3588/trusted-firmware-a.git
+  before_script:
+    - apt update
+    - apt install -y bc build-essential
+                        crossbuild-essential-arm64
+                        device-tree-compiler
+                        git
+                        python3
+                        bison
+                        flex
+                        python3-setuptools
+                        swig
+                        python3-dev
+                        libssl-dev
+                        python3-pyelftools
+                        uuid-dev
+                        gnutls-dev
+
+  script:
+    # download rkbin
+    - git clone --depth 1 -b master ${RKBIN_REPO_URL} $CI_PROJECT_DIR/../rkbin
+    # clone TF-A
+    - git clone --depth 1 -b rk3588 ${TFA_REPO_URL} $CI_PROJECT_DIR/../trusted-firmware-a
+
+    # prepare PATH
+    - export CROSS_COMPILE=aarch64-linux-gnu-
+    - export ARCH=arm64
+    # build BL31
+    - cd $CI_PROJECT_DIR/../trusted-firmware-a
+    - make PLAT=rk3588 bl31
+    - cd $CI_PROJECT_DIR
+
+    # prepare PATH for U-boot
+    - export BL31=../trusted-firmware-a/build/rk3588/release/bl31/bl31.elf
+    - export ROCKCHIP_TPL=../rkbin/bin/rk35/rk3588_ddr_lp4_2112MHz_lp5_2400MHz_v1.18.bin
+
+    # build
+    - cd $CI_PROJECT_DIR
+    - make rock5b-rk3588_defconfig
+    - make -j$(nproc)
+    - ../rkbin/tools/boot_merger rock5b-rk3588.ini
+
+    # build proprietary usb loader
+    # the directory-dance here is because boot_merger shipped in rkbin
+    # doesn't seem to support the "--prepath" option which is available in
+    # downstream U-Boot.
+    - cd ../rkbin && ./tools/boot_merger RKBOOT/RK3588MINIALL.ini && mv *spl_loader*.bin ../u-boot/
+  artifacts:
+    paths:
+      - u-boot.itb
+      - idbloader.img
+      - u-boot-rockchip.bin
+      - u-boot-rockchip-spi.bin
+      - rock5b-rk3588.bin
+      - rk3588_spl_loader_*.bin

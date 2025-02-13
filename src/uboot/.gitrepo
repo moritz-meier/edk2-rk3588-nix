@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://gitlab.collabora.com/hardware-enablement/rockchip-3588/u-boot.git
+	branch = ec2c587461b3a293e43287eb731b8d035354c5fe
+	commit = ec2c587461b3a293e43287eb731b8d035354c5fe
+	parent = 1c7aa75ad74cfefc63aa69a1c2d4ae97ca5bdf1c
+	method = merge
+	cmdver = 0.4.9
