@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = ssh://git@github.com/pyca/cryptography.git
+	branch = 7e33b0e7739d633c77b8c478620167f693ed13f4
+	commit = 7e33b0e7739d633c77b8c478620167f693ed13f4
+	parent = 28793ab2376c5ac6e3e30c737f3f2205f24d460f
+	method = merge
+	cmdver = 0.4.9

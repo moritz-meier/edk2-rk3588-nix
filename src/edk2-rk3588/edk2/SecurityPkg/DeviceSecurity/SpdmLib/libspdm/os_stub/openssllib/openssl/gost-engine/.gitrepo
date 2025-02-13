@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = ssh://git@github.com/gost-engine/engine
+	branch = b2b4d629f100eaee9f5942a106b1ccefe85b8808
+	commit = b2b4d629f100eaee9f5942a106b1ccefe85b8808
+	parent = 9cd4358a15a3886b9885e059850d1642c43e6eb0
+	method = merge
+	cmdver = 0.4.9

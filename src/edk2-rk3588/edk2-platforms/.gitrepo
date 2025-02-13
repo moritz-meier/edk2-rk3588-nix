@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = ssh://git@github.com/tianocore/edk2-platforms.git
+	branch = b1be341ee6f9ffde833779cf129660e510b8eb61
+	commit = b1be341ee6f9ffde833779cf129660e510b8eb61
+	parent = 801cc901de349f51c3e70588caf9427618ae1c8e
+	method = merge
+	cmdver = 0.4.9

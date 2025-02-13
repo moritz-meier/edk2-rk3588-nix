@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = ssh://git@github.com/google/brotli
+	branch = f4153a09f87cbb9c826d8fc12c74642bb2d879ea
+	commit = f4153a09f87cbb9c826d8fc12c74642bb2d879ea
+	parent = 7bf7f31be817e2d2bc24411cabeb51e4a5035f4e
+	method = merge
+	cmdver = 0.4.9

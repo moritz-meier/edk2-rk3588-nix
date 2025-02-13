@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = ssh://git@github.com/DMTF/libspdm.git
+	branch = 50924a4c8145fc721e17208f55814d2b38766fe6
+	commit = 50924a4c8145fc721e17208f55814d2b38766fe6
+	parent = bbca00d3fe316fea5b2ae7e48c42d117ab57c53b
+	method = merge
+	cmdver = 0.4.9

@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://git.kernel.org/pub/scm/linux/kernel/git/devicetree/devicetree-rebasing.git
+	branch = 008abf9e254a59be134130d4163147b3a486a6b4
+	commit = 008abf9e254a59be134130d4163147b3a486a6b4
+	parent = 8258ac88ac948110de1a9a9c044698d0ff8c6469
+	method = merge
+	cmdver = 0.4.9

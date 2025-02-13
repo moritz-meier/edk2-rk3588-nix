@@ -1,0 +1,51 @@
+## @file
+#  This driver effectuates SbsaQemu platform configuration settings
+#
+#  Copyright (c) 2019, Linaro Ltd. All rights reserved.
+#
+#  SPDX-License-Identifier: BSD-2-Clause-Patent
+#
+##
+
+[Defines]
+  INF_VERSION                    = 0x0001001c
+  BASE_NAME                      = SbsaQemuPlatformDxe
+  FILE_GUID                      = 6c592dc9-76c8-474f-93b2-bf1e8f15ae34
+  MODULE_TYPE                    = DXE_DRIVER
+  VERSION_STRING                 = 1.0
+
+  ENTRY_POINT                    = InitializeSbsaQemuPlatformDxe
+
+[Sources]
+  SbsaQemuPlatformDxe.c
+
+[Packages]
+  ArmPkg/ArmPkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  MdePkg/MdePkg.dec
+  Silicon/Qemu/SbsaQemu/SbsaQemu.dec
+
+[LibraryClasses]
+  PcdLib
+  DebugLib
+  HardwareInfoLib
+  NonDiscoverableDeviceRegistrationLib
+  UefiDriverEntryPoint
+
+[Pcd]
+  gArmVirtSbsaQemuPlatformTokenSpaceGuid.PcdPlatformAhciBase
+  gArmVirtSbsaQemuPlatformTokenSpaceGuid.PcdPlatformAhciSize
+  gArmVirtSbsaQemuPlatformTokenSpaceGuid.PcdPlatformXhciBase
+  gArmVirtSbsaQemuPlatformTokenSpaceGuid.PcdPlatformXhciSize
+
+  gArmVirtSbsaQemuPlatformTokenSpaceGuid.PcdPlatformVersionMajor
+  gArmVirtSbsaQemuPlatformTokenSpaceGuid.PcdPlatformVersionMinor
+
+  gArmTokenSpaceGuid.PcdGicDistributorBase
+  gArmTokenSpaceGuid.PcdGicRedistributorsBase
+  gArmVirtSbsaQemuPlatformTokenSpaceGuid.PcdGicItsBase
+
+
+[Depex]
+  TRUE
+

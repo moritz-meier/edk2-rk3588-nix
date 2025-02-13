@@ -1,0 +1,52 @@
+#
+# SPDX-License-Identifier: BSD-2-Clause-Patent
+#
+
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = MvI2cDxe
+  FILE_GUID                      = 59fc3843-d8d4-40aa-ae07-38967138509b
+  MODULE_TYPE                    = DXE_DRIVER
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = MvI2cInitialise
+
+[Sources.common]
+  MvI2cDxe.c
+
+[Packages]
+  EmbeddedPkg/EmbeddedPkg.dec
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  ArmPlatformPkg/ArmPlatformPkg.dec
+  ArmPkg/ArmPkg.dec
+  Silicon/Marvell/MarvellSiliconPkg/MarvellSiliconPkg.dec
+
+[LibraryClasses]
+  IoLib
+  PcdLib
+  BaseLib
+  DebugLib
+  UefiLib
+  UefiDriverEntryPoint
+  UefiBootServicesTableLib
+
+[Protocols]
+  gEfiI2cMasterProtocolGuid
+  gEfiDevicePathProtocolGuid
+  gEfiI2cEnumerateProtocolGuid
+  gEfiI2cBusConfigurationManagementProtocolGuid
+  gMarvellBoardDescProtocolGuid
+
+[Pcd]
+  gMarvellSiliconTokenSpaceGuid.PcdI2cSlaveAddresses
+  gMarvellSiliconTokenSpaceGuid.PcdI2cSlaveBuses
+  gMarvellSiliconTokenSpaceGuid.PcdI2cControllersEnabled
+  gMarvellSiliconTokenSpaceGuid.PcdI2cClockFrequency
+  gMarvellSiliconTokenSpaceGuid.PcdI2cBaudRate
+  gMarvellSiliconTokenSpaceGuid.PcdI2cBusCount
+
+[Guids]
+  gEfiEndOfDxeEventGroupGuid
+
+[Depex]
+  TRUE

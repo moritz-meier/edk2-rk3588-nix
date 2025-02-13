@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = ssh://git@github.com/riscv/opensbi
+	branch = a731c7e36988c3308e1978ecde491f2f6182d490
+	commit = a731c7e36988c3308e1978ecde491f2f6182d490
+	parent = ef04daee45f7b23e704988c6a364724ac3a0eeda
+	method = merge
+	cmdver = 0.4.9

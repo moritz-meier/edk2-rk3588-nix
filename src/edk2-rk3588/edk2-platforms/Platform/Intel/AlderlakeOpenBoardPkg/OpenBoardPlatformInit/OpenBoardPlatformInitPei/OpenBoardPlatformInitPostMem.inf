@@ -1,0 +1,55 @@
+### @file
+# Component information file for the OpenBoard Platform Init PEI module.
+#
+#   Copyright (c) 2022, Intel Corporation. All rights reserved.<BR>
+#   SPDX-License-Identifier: BSD-2-Clause-Patent
+#
+###
+
+[Defines]
+  INF_VERSION                    = 0x00010017
+  BASE_NAME                      = OpenBoardPlatformInitPostMem
+  FILE_GUID                      = 314EE04C-1106-4DC6-ACBC-CF19C0DBC5CC
+  VERSION_STRING                 = 1.0
+  MODULE_TYPE                    = PEIM
+  ENTRY_POINT                    = OpenBoardPlatformInitPostMemEntryPoint
+
+[LibraryClasses]
+  PeimEntryPoint
+  DebugLib
+  MemoryAllocationLib
+  BaseMemoryLib
+  HobLib
+  PeiServicesLib
+  PcdLib
+  PeiGetFvInfoLib
+
+[Packages]
+  AlderlakeSiliconPkg/SiPkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  MdePkg/MdePkg.dec
+  UefiCpuPkg/UefiCpuPkg.dec
+  IntelFsp2Pkg/IntelFsp2Pkg.dec
+  IntelFsp2WrapperPkg/IntelFsp2WrapperPkg.dec
+  RaptorLakeFspBinPkg/Client/RaptorLakeP/RaptorLakeFspBinPkg.dec
+  AlderlakeOpenBoardPkg/OpenBoardPkg.dec
+  MinPlatformPkg/MinPlatformPkg.dec
+  IntelSiliconPkg/IntelSiliconPkg.dec
+
+[Sources]
+  OpenBoardPlatformInitPostMem.c
+
+[Ppis]
+  gPeiGraphicsPlatformPpiGuid                   ## PRODUCES
+
+[Protocols]
+
+[Guids]
+  gPlatformInitFvLocationGuid                   ## PRODUCES
+
+[Depex]
+  gEfiPeiMemoryDiscoveredPpiGuid
+
+[Pcd]
+  gIntelSiliconPkgTokenSpaceGuid.PcdIntelGraphicsVbtFileGuid      ## CONSUMES
+

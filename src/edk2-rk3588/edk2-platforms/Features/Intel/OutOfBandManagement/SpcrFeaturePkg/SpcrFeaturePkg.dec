@@ -1,0 +1,38 @@
+## @file
+# This package provides advanced feature functionality about Serial Port Console Redirection Table (SPCR).
+# This package should only depend on EDK II Core packages, IntelSiliconPkg, and MinPlatformPkg.
+#
+# The DEC files are used by the utilities that parse DSC and
+# INF files to generate AutoGen.c and AutoGen.h files
+# for the build infrastructure.
+#
+# Copyright (c) 2020, Intel Corporation. All rights reserved.<BR>
+# Copyright (C) 2023 Advanced Micro Devices, Inc. All rights reserved
+#
+# SPDX-License-Identifier: BSD-2-Clause-Patent
+#
+##
+
+[Defines]
+  DEC_SPECIFICATION = 0x00010017
+  PACKAGE_NAME      = SpcrFeaturePkg
+  PACKAGE_GUID      = 20E84A8A-9008-4798-8215-697555E95B29
+  PACKAGE_VERSION   = 0.1
+
+[Includes]
+  Include
+
+[Guids]
+  gSpcrFeaturePkgTokenSpaceGuid = { 0xe978c988, 0xeeba, 0x4671, { 0xb8, 0x0d, 0xcc, 0x8b, 0x89, 0xb5, 0xd1, 0xef }}
+
+[PcdsFixedAtBuild]
+  # SPCR default IRQ set to 4
+  gSpcrFeaturePkgTokenSpaceGuid.PcdSpcrInterrupt|4|UINT8|0x00000010
+
+[PcdsFeatureFlag]
+  gSpcrFeaturePkgTokenSpaceGuid.PcdSpcrFeatureEnable|FALSE|BOOLEAN|0x00000001
+
+[LibraryClasses]
+  ## @libraryclass  Provides an API for get SPCR device.
+  #
+  SpcrDeviceLib|Include/Library/SpcrDeviceLib.h

@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = ssh://git@gitlab.com/cmocka/cmocka.git
+	branch = a01cc69ee9536f90e57c61a198f2d1944d3d4313
+	commit = a01cc69ee9536f90e57c61a198f2d1944d3d4313
+	parent = 5ad1e257f105903f01c21a37b2c6d681d545b895
+	method = merge
+	cmdver = 0.4.9

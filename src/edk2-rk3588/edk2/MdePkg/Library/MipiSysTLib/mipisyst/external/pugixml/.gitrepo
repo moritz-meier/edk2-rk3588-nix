@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = ssh://git@github.com/zeux/pugixml.git
+	branch = c53fdab93af76106b963216d85897614b996f8b6
+	commit = c53fdab93af76106b963216d85897614b996f8b6
+	parent = 8b259c96a5c0be25d2ccb7eb1b5c194314d6d4ba
+	method = merge
+	cmdver = 0.4.9

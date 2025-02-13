@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = ssh://git@github.com/provider-corner/libprov.git
+	branch = 8a126e09547630ef900177625626b6156052f0ee
+	commit = 8a126e09547630ef900177625626b6156052f0ee
+	parent = 12175d02f579b3a9750ba77e03c76161a7eb4f6e
+	method = merge
+	cmdver = 0.4.9

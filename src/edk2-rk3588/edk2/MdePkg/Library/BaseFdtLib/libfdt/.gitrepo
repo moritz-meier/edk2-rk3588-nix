@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = ssh://git@github.com/devicetree-org/pylibfdt.git
+	branch = cfff805481bdea27f900c32698171286542b8d3c
+	commit = cfff805481bdea27f900c32698171286542b8d3c
+	parent = 2774ad16ad2950420553abeb4abac56cb6f43bd7
+	method = merge
+	cmdver = 0.4.9

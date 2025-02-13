@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = ssh://git@github.com/worproject/arm-trusted-firmware
+	branch = d5c68fd928586f4152a3402dfdd9a6ae6e39e392
+	commit = d5c68fd928586f4152a3402dfdd9a6ae6e39e392
+	parent = dbe04d87109e57fc21097276f0914a07edf21bca
+	method = merge
+	cmdver = 0.4.9

@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = ssh://git@github.com/edk2-porting/edk2-rk3588.git
+	branch = 3564ae3fe53c13e10ff64d7363369fa98bfd5ea8
+	commit = 3564ae3fe53c13e10ff64d7363369fa98bfd5ea8
+	parent = 633c3b9a935ef1ffe85489e2625352dea9d0e177
+	method = merge
+	cmdver = 0.4.9

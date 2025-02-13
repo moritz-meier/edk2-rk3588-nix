@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = ssh://git@github.com/rockchip-linux/rkbin.git
+	branch = 7c35e21a8529b3758d1f051d1a5dc62aae934b2b
+	commit = 7c35e21a8529b3758d1f051d1a5dc62aae934b2b
+	parent = 233f96c3e66c9967eea6962066910a3d50b2b3bc
+	method = merge
+	cmdver = 0.4.9

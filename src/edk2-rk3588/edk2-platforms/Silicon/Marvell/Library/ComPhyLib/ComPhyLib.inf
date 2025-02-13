@@ -1,0 +1,60 @@
+# Copyright (C) 2016 Marvell International Ltd.
+#
+# SPDX-License-Identifier: BSD-2-Clause-Patent
+#
+
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = MarvellComPhyLib
+  FILE_GUID                      = 3314541a-9647-4a37-b8c6-24e000900e4e
+  MODULE_TYPE                    = BASE
+  VERSION_STRING                 = 1.0
+  LIBRARY_CLASS                  = ComPhyLib
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  EmbeddedPkg/EmbeddedPkg.dec
+  ArmPkg/ArmPkg.dec
+  ArmPlatformPkg/ArmPlatformPkg.dec
+  Silicon/Marvell/MarvellSiliconPkg/MarvellSiliconPkg.dec
+
+[LibraryClasses]
+  ArmLib
+  ArmSmcLib
+  DebugLib
+  MemoryAllocationLib
+  PcdLib
+  SampleAtResetLib
+  IoLib
+  UefiBootServicesTableLib
+
+[Sources.common]
+  ComPhyLib.c
+  ComPhyCp110.c
+
+[Protocols]
+  gMarvellBoardDescProtocolGuid  ## CONSUMES
+
+[FixedPcd]
+  gMarvellSiliconTokenSpaceGuid.PcdComPhyDevices
+
+  #Chip0
+  gMarvellSiliconTokenSpaceGuid.PcdChip0ComPhyTypes
+  gMarvellSiliconTokenSpaceGuid.PcdChip0ComPhySpeeds
+  gMarvellSiliconTokenSpaceGuid.PcdChip0ComPhyInvFlags
+
+  #Chip1
+  gMarvellSiliconTokenSpaceGuid.PcdChip1ComPhyTypes
+  gMarvellSiliconTokenSpaceGuid.PcdChip1ComPhySpeeds
+  gMarvellSiliconTokenSpaceGuid.PcdChip1ComPhyInvFlags
+
+  #Chip2
+  gMarvellSiliconTokenSpaceGuid.PcdChip2ComPhyTypes
+  gMarvellSiliconTokenSpaceGuid.PcdChip2ComPhySpeeds
+  gMarvellSiliconTokenSpaceGuid.PcdChip2ComPhyInvFlags
+
+  #Chip3
+  gMarvellSiliconTokenSpaceGuid.PcdChip3ComPhyTypes
+  gMarvellSiliconTokenSpaceGuid.PcdChip3ComPhySpeeds
+  gMarvellSiliconTokenSpaceGuid.PcdChip3ComPhyInvFlags

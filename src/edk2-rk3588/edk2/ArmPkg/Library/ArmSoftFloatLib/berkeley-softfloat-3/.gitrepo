@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = ssh://git@github.com/ucb-bar/berkeley-softfloat-3.git
+	branch = b64af41c3276f97f0e181920400ee056b9c88037
+	commit = b64af41c3276f97f0e181920400ee056b9c88037
+	parent = 735d799582f86c0e84ac53779ef870bf7bf0d749
+	method = merge
+	cmdver = 0.4.9
